@@ -8,6 +8,7 @@
 using namespace rs2;
 using namespace std;
 
+// https://en.wikipedia.org/wiki/GLFW
 void register_glfw_callbacks ( window &app, glfw_state &app_state );
 
 int main()
@@ -21,9 +22,8 @@ int main()
   rs2::pipeline pipe;
   pipe.start ();
 
-  while ( app ) // Application still alive?
+  while ( app ) 
   {
-    // Wait for the next set of frames from the camera
     auto frames = pipe.wait_for_frames ();
     auto color = frames.get_color_frame ();
 

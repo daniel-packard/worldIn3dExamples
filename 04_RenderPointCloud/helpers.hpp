@@ -730,13 +730,11 @@ struct glfw_state {
     texture tex;
 };
 
-// Handles all the OpenGL calls needed to display the point cloud
 void draw_pointcloud(float width, float height, glfw_state& app_state, rs2::points& points)
 {
     if (!points)
         return;
 
-    // OpenGL commands that prep screen for the pointcloud
     glLoadIdentity();
     glPushAttrib(GL_ALL_ATTRIB_BITS);
 
@@ -772,9 +770,9 @@ void draw_pointcloud(float width, float height, glfw_state& app_state, rs2::poin
     auto tex_coords = points.get_texture_coordinates(); // and texture coordinates
     for (int i = 0; i < points.size(); i++)
     {
+        // upload the point and texture coordinates only for points we have depth data for
         if (vertices[i].z)
         {
-            // upload the point and texture coordinates only for points we have depth data for
             glVertex3fv(vertices[i]);
             glTexCoord2fv(tex_coords[i]);
         }
