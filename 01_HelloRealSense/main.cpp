@@ -1,4 +1,4 @@
-// License: Apache 2.0. See LICENSE file in root directory.
+// License: Apache 2.0. See LICENSE file in root directory.dd
 // Copyright(c) 2017 Intel Corporation. All Rights Reserved.
 
 #include <librealsense2/rs.hpp>
