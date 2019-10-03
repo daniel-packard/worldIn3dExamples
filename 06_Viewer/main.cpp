@@ -17,7 +17,7 @@ int main (int argc, char* argv[])
   if (argc < 2)
   {
     printf ("Usage :\n");
-    printf ("\t\t%s file.ply number_of_ICP_iterations\n", argv[0]);
+    printf ("\t\t%s file.ply\n", argv[0]);
     PCL_ERROR ("Provide one ply file.\n");
     return (-1);
   }
