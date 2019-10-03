@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.10)
 
 project(worldIn3dExamples VERSION 0.0.1 LANGUAGES CXX)
 
@@ -12,8 +12,17 @@ find_package(glfw3 REQUIRED)
 find_package(OpenGL REQUIRED)
 set(GLFW glfw ${OPENGL_LIBRARIES})
 
+# Adding PCL library
+# set(PCL_DIR "/home/sai/workspace/pcl-pcl-1.7.2/build/")
+find_package(PCL REQUIRED)
+
+include_directories(${PCL_INCLUDE_DIRS} include)
+link_directories(${PCL_LIBRARY_DIRS})
+add_definitions(${PCL_DEFINITIONS})
+
 add_subdirectory(01_HelloRealSense)
 add_subdirectory(02_Distance)
 add_subdirectory(03_PointCloud)
 add_subdirectory(04_RenderPointCloud)
 add_subdirectory(05_ICP)
+add_subdirectory(06_Viewer)
