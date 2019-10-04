@@ -38,15 +38,34 @@ add_definitions(${PCL_DEFINITIONS})
 
 FIND_PACKAGE( G2O REQUIRED )
 include_directories(${G2O_INCLUDE_DIR})
-include_directories(${G2O_INCLUDE_DIR}/g2o/EXTERNAL/csparse)
-link_directories(${G2O_LIBRARY_DIR})
+include_directories($ENV{G2O_ROOT}include/g2o/EXTERNAL/csparse/)
+link_directories($ENV{G2O_ROOT}lib)
 
+SET(G2O_LIBRARIES 
+  g2o_cli.lib
+  g2o_core.lib
+  g2o_stuff.lib
+  g2o_types_data.lib
+  g2o_types_icp.lib
+  g2o_types_sba.lib
+  g2o_types_sclam2d.lib
+  g2o_types_sim3.lib
+  g2o_types_slam2d.lib
+  g2o_types_slam3d.lib
+  g2o_solver_csparse.lib
+  g2o_csparse_extension.lib
+  g2o_ext_csparse.lib
+  g2o_solver_csparse.lib
+)
+  
 add_subdirectory(01_HelloRealSense)
 add_subdirectory(02_Distance)
 add_subdirectory(03_PointCloud)
 add_subdirectory(04_RenderPointCloud)
 add_subdirectory(05_ICP)
 add_subdirectory(06_PclViewer)
+add_subdirectory(07_g2o_circle_fit)
+add_subdirectory(08_loop_closure_test)
 
 if(POLICY CMP0074)
   cmake_policy(POP)
