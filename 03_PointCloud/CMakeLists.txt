@@ -1,2 +1,3 @@
-add_executable(03_PointCloud main.cpp)
-target_link_libraries(03_PointCloud ${realsense2_LIBRARY})
+set(main 03_PointCloud)
+add_executable(${main} ${main}.cpp)
+target_link_libraries(${main} ${realsense2_LIBRARY})

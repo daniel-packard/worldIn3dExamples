@@ -1,2 +1,3 @@
-add_executable(04_RenderPointCloud main.cpp helpers.hpp)
-target_link_libraries(04_RenderPointCloud ${realsense2_LIBRARY} ${GLFW})
+set(main 04_RenderPointCloud)
+add_executable(${main} ${main}.cpp)
+target_link_libraries(${main} ${realsense2_LIBRARY} ${GLFW})

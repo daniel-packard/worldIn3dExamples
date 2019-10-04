@@ -1,2 +1,3 @@
-add_executable(02_Distance main.cpp)
-target_link_libraries(02_Distance ${realsense2_LIBRARY})
+set(main 02_Distance)
+add_executable(${main} ${main}.cpp)
+target_link_libraries(${main} ${realsense2_LIBRARY})

@@ -1,2 +1,3 @@
-add_executable(01_RealsenseBasic main.cpp)
-target_link_libraries(01_RealsenseBasic ${realsense2_LIBRARY})
+set(main 01_HelloRealSense)
+add_executable(${main} ${main}.cpp)
+target_link_libraries(${main} ${realsense2_LIBRARY})

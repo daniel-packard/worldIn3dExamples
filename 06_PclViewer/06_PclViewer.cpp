@@ -27,10 +27,10 @@ int main (int argc, char* argv[])
     PCL_ERROR ("Error loading cloud %s.\n", argv[1]);
     return (-1);
   }
+
   pcl::visualization::PCLVisualizer viewer ("ICP demo");
   viewer.addPointCloud (cloud_in, "cloud_in_v1");
 
-  // Display the visualiser
   while (!viewer.wasStopped ())
   {
     viewer.spinOnce ();
