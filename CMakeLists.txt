@@ -65,7 +65,7 @@ add_subdirectory(04_RenderPointCloud)
 add_subdirectory(05_ICP)
 add_subdirectory(06_PclViewer)
 add_subdirectory(07_g2o_circle_fit)
-add_subdirectory(08_loop_closure_test)
+add_subdirectory(08_g2o_test)
 
 if(POLICY CMP0074)
   cmake_policy(POP)
